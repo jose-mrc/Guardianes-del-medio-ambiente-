@@ -55,4 +55,4 @@ Mermaid (los diagramas se escriben como texto y GitHub los renderiza automática
 ## Integrantes del equipo
 
 - José Manuel Ramos Chávez
-- (agrega aquí a tus compañeros)
+- Roy cox
