@@ -1,0 +1,45 @@
+# Diagrama de clases: módulo Niveles y Habitaciones
+
+```mermaid
+classDiagram
+    class GestorNiveles {
+        -int nivelActual
+        -List~Nivel~ niveles
+        +cargarNivel(numero)
+        +siguienteNivel()
+        +reiniciarNivel()
+        +todosCompletados() boolean
+    }
+    class Nivel {
+        -int numero
+        -String nombre
+        -boolean completado
+        -int problemasRestantes
+        +iniciar()
+        +reiniciar()
+        +verificarCompletado() boolean
+    }
+    class Habitacion {
+        -String nombre
+        -String fondo
+        +cargarObjetos()
+        +contarProblemas() int
+    }
+    class ObjetoInteractivo {
+        -String nombre
+        -boolean esProblema
+        -boolean resuelto
+        +interactuar() boolean
+    }
+    class Problema {
+        -String tipo
+        -String descripcion
+        -String solucion
+        +resolver()
+    }
+
+    GestorNiveles "1" o-- "1..*" Nivel : administra
+    Nivel "1" *-- "1" Habitacion : se desarrolla en
+    Habitacion "1" *-- "1..*" ObjetoInteractivo : contiene
+    ObjetoInteractivo "0..1" --> "1" Problema : representa
+```
